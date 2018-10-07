@@ -11,6 +11,11 @@ import (
 	"github.com/russross/blackfriday"
 )
 
+type Post struct {
+	Title   string
+	Content template.HTML
+}
+
 func main() {
 	r := gin.Default()
 	r.Use(gin.Logger())
@@ -34,7 +39,6 @@ func main() {
 			"posts": posts,
 		})
 	})
-	r.Run()
 
 	r.GET("/:postName", func(c *gin.Context) {
 		postName := c.Param("postName")
@@ -49,11 +53,6 @@ func main() {
 		}
 		postHTML := template.HTML(blackfriday.MarkdownCommon([]byte(mdfile)))
 
-		type Post struct {
-			Title   string
-			Content template.HTML
-		}
-
 		post := Post{Title: postName, Content: postHTML}
 
 		c.HTML(http.StatusOK, "post.gohtml", gin.H{
@@ -61,5 +60,5 @@ func main() {
 			"Content": post.Content,
 		})
 	})
-
+	r.Run()
 }

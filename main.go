@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/russross/blackfriday"
 )
@@ -21,6 +22,7 @@ func main() {
 	r.Use(gin.Logger())
 	r.Delims("{{", "}}")
 
+	r.Use(static.Serve("/assets", static.LocalFile("/assets", false)))
 	r.LoadHTMLGlob("./templates/*.gohtml")
 
 	r.GET("/", func(c *gin.Context) {

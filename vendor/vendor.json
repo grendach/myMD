@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "mUuctqwhBDIEJ8Z0tFeCpP03+P8=",
+			"path": "github.com/russross/blackfriday",
+			"revision": "05f3235734ad95d0016f6a23902f06461fcf567a",
+			"revisionTime": "2018-09-17T18:59:06Z"
+		}
+	],
+	"rootPath": "myMD"
+}

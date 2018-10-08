@@ -1,1 +1,1 @@
-“web: myMD”
+web: myMD

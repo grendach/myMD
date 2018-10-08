@@ -11,21 +11,17 @@ import (
 	"github.com/gin-gonic/gin/binding"
 )
 
-// ENV_GIN_MODE indicates environment name for gin mode.
 const ENV_GIN_MODE = "GIN_MODE"
 
 const (
-	// DebugMode indicates gin mode is debug.
-	DebugMode = "debug"
-	// ReleaseMode indicates gin mode is relase.
-	ReleaseMode = "release"
-	// TestMode indicates gin mode is test.
-	TestMode = "test"
+	DebugMode   string = "debug"
+	ReleaseMode string = "release"
+	TestMode    string = "test"
 )
 const (
-	debugCode = iota
-	releaseCode
-	testCode
+	debugCode   = iota
+	releaseCode 
+	testCode  
 )
 
 // DefaultWriter is the default io.Writer used the Gin for debug output and
@@ -43,13 +39,16 @@ var modeName = DebugMode
 
 func init() {
 	mode := os.Getenv(ENV_GIN_MODE)
-	SetMode(mode)
+	if len(mode) == 0 {
+		SetMode(DebugMode)
+	} else {
+		SetMode(mode)
+	}
 }
 
-// SetMode sets gin mode according to input string.
 func SetMode(value string) {
 	switch value {
-	case DebugMode, "":
+	case DebugMode:
 		ginMode = debugCode
 	case ReleaseMode:
 		ginMode = releaseCode
@@ -58,24 +57,13 @@ func SetMode(value string) {
 	default:
 		panic("gin mode unknown: " + value)
 	}
-	if value == "" {
-		value = DebugMode
-	}
 	modeName = value
 }
 
-// DisableBindValidation closes the default validator.
 func DisableBindValidation() {
 	binding.Validator = nil
 }
 
-// EnableJsonDecoderUseNumber sets true for binding.EnableDecoderUseNumberto to
-// call the UseNumber method on the JSON Decoder instance.
-func EnableJsonDecoderUseNumber() {
-	binding.EnableDecoderUseNumber = true
-}
-
-// Mode returns currently gin mode.
 func Mode() string {
 	return modeName
 }

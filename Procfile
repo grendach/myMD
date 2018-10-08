@@ -1,1 +1,1 @@
-web: myMd 
+web: myMd

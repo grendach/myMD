@@ -13,5 +13,9 @@ Created in [Go](https://golang.org/) and hosted on [Heroku](https://devcenter.he
     * build the app using `go install`
     * use step by step [guide](https://devcenter.heroku.com/articles/getting-started-with-go) for deploying `myMD` on Heroku
     * use [govendor](https://github.com/kardianos/govendor) for package contorl in Go
-
- If you want you can put your markdown files into `myMD/markdown` directory, if you want to add/replace some info - it's up to you :)
+    * if you want you can put your markdown files into `myMD/markdown` directory, if you want to add/replace some info - it's up to you :)
+    * push you changes to heroku git branch:
+        * heroku login
+        * git add .
+        * git commit -m "edit md"
+        * git push heroku master

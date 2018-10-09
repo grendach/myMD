@@ -25,7 +25,7 @@ For more info check [official documentation](https://www.vaultproject.io/docs/in
     ```
 *  add your plugin to Vault server:
     ```
-    $ curl -X PUT 0:8200/v1/sys/plugins/catalog/vabar -d '{"sha_256":  d4ed3ad15cde18d649d9324434ab978a0d0c434dd5523738d252899ad312e9", "command": "vabar"}' -H     Vault-Token:c865-56d5-62cd-4220-15fda0ae8665"
+    $ curl -X PUT 0:8200/v1/sys/plugins/catalog/my_plagin -d '{"sha_256":  d4ed3ad15cde18d649d9324434ab978a0d0c434dd5523738d252899ad312e9", "command": "my_plagin"}' -H     Vault-Token:1111-1111-1111-1111-1111111111"
     ```
 *  mount your plugin to Vault server:
     ```
@@ -37,5 +37,5 @@ For more info check [official documentation](https://www.vaultproject.io/docs/in
     ```
 *  run you plugin and check if it's work:
     ```
-    $ curl -H "X-Vault-Token: root" -X POST 0:8200/v1/vabar/backup | jq
+    $ curl -H "X-Vault-Token: root" -X POST 0:8200/v1/my_plagin/backup | jq
     ```

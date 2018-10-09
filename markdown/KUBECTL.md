@@ -124,7 +124,6 @@ Full list of commands U'll find in Kubect [cheatsheet](https://kubernetes.io/doc
 
 
 ## Editing Resources
-The edit any API resource in an editor.
 
 * Edit the service named docker-registry
     ```
@@ -235,11 +234,19 @@ The edit any API resource in an editor.
     ```
     kubectl uncordon my-node
     ```
-
-$ kubectl top node my-node                                              * Show metrics for a given node
-$ kubectl cluster-info                                                  * Display addresses of the master and services
-$ kubectl cluster-info dump                                             * Dump current cluster state to stdout
-$ kubectl cluster-info dump --output-directory=/path/to/cluster-state   * Dump current cluster state to /path/to/cluster-state
-```
-## If a taint with that key and effect already exists, its value is replaced as specified.
-kubectl taint nodes foo dedicated=special-user:NoSchedule
+* Show metrics for a given node
+    ```
+    $ kubectl top node my-node
+    ```
+* Display addresses of the master and services
+    ```
+    $ kubectl cluster-info
+    ```
+* Dump current cluster state to stdout
+    ```
+    $ kubectl cluster-info dump
+    ```
+* Dump current cluster state to /path/to/cluster-state
+    ```
+    $ kubectl cluster-info dump --output-directory=/path/to/cluster-state
+    ```

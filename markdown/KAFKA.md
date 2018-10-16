@@ -56,3 +56,10 @@ For more info check [official documentation](https://kafka.apache.org/documentat
     ```
     $ KAFKA_HOME/bin/kafka-consumer-groups.sh --zookeeper $ZK --list
     ```
+## ACL
+
+* create ACL for kafka topic
+    ```
+    $ kafka-acls --authorizer-properties zookeeper.connect=localhost:2181 --add \
+    --allow-principal User:Alice --operation All --topic '*' --cluster
+    ```

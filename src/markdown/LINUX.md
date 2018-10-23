@@ -1,6 +1,11 @@
 
 ## Linux commands:
 
+* create `archive.zip` file from `dir`
+    ```
+    $ zip -r 'archive.zip' /home/dir/
+    ```
+
 *  find files which containes specific string
     ```
     $ grep -rnw '/path/to/somewhere/' -e 'pattern'

@@ -68,5 +68,5 @@
     ```
 * create virtualenv `v` with python3.7:
     ```
-    $ python3.7 -m virtualenv v
+    $ virtualenv -p /usr/bin/python3.7 v
     ```

@@ -1,6 +1,11 @@
 
 ## Linux commands:
 
+* create `archive.zip` file from `dir`
+    ```
+    $ zip -r 'archive.zip' /home/dir/
+    ```
+
 *  find files which containes specific string
     ```
     $ grep -rnw '/path/to/somewhere/' -e 'pattern'
@@ -60,4 +65,8 @@
     $ minikube stop
     
     $ minikube delete && rm -rf ~/.minikube && rm -rf ~/.kube
+    ```
+* create virtualenv `v` with python3.7:
+    ```
+    $ virtualenv -p /usr/bin/python3.7 v
     ```

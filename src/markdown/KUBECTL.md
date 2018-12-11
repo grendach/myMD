@@ -212,6 +212,10 @@ Full list of commands U'll find in Kubect [cheatsheet](https://kubernetes.io/doc
     ```
     $ kubectl exec my-pod -- ls /
     ```
+* Get a shell to the running Container in some namespace (1 container case)
+    ```
+    $ kubectl -n namespace exec -it testclient -- /bin/bash
+    ```
 * Run command in existing pod (multi-container case)
     ```
     $ kubectl exec my-pod -c my-container -- ls /

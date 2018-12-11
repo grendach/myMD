@@ -33,3 +33,12 @@ For more info check [official documentation](https://docs.docker.com/) or  [GIT]
     ```
     $ docker-compose -f docker-compose-dev.yml up -d
     ```
+* run docker image under the proxy and with some parameters
+    ```
+    $ docker run -d --restart=unless-stopped \
+    -p 80:80 -p 443:443 \
+    -e HTTP_PROXY="http://10.144.1.10:8080/" \
+    -e HTTPS_PROXY="http://10.144.1.10:8080/" \
+    -e NO_PROXY="localhost,127.0.0.1,0.0.0.0,192.168.10.0/24,example.com," \
+    rancher/rancher:latest
+    ```

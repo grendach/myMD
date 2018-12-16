@@ -23,12 +23,12 @@ func main() {
 	r.Delims("{{", "}}")
 
 	r.Use(static.Serve("/assets", static.LocalFile("/assets", false)))
-	r.LoadHTMLGlob("./templates/*.gohtml")
+	r.LoadHTMLGlob("./src/templates/*.gohtml")
 
 	r.GET("/", func(c *gin.Context) {
 		var posts []string
 
-		files, err := ioutil.ReadDir("./markdown/")
+		files, err := ioutil.ReadDir("./src/markdown/")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -45,7 +45,7 @@ func main() {
 	r.GET("/:postName", func(c *gin.Context) {
 		postName := c.Param("postName")
 
-		mdfile, err := ioutil.ReadFile("./markdown/" + postName)
+		mdfile, err := ioutil.ReadFile("./src/markdown/" + postName)
 
 		if err != nil {
 			fmt.Println(err)

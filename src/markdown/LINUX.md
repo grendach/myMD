@@ -23,9 +23,9 @@
     ```
     or as `sudo user` add proxy servers to `/etc/environment` file
 
-* create venv for python3.6
+* create venv for python3.7
     ```
-    $ virtualenv --python=python3.6 venv
+    $ virtualenv --python=python3.7 v
     ```
 
 * creating ssh tunnel

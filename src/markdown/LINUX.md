@@ -70,3 +70,7 @@
     ```
     $ virtualenv -p /usr/bin/python3.7 v
     ```
+* run pytest and generate coverage report:
+    ```
+    $ PYTHONPATH=. pytest --cov --cov-report=html --cov-report=console
+    ```
